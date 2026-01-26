@@ -38,7 +38,7 @@ const EventsTimeline = () => {
             <span className="text-gold text-2xl">✦</span>
           </div>
           <p className="font-body text-lg text-muted-foreground italic">
-            Three days of love, laughter, and celebration
+             days of love, laughter, and celebration
           </p>
         </motion.div>
 
