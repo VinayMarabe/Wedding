@@ -5,23 +5,23 @@ import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
 // Add your couple photos here
 const galleryImages = [
   {
-    src: "/src/assets/Photos/1.jpeg",
-    caption: "Our First Meeting",
+    src: "/Photos/1.jpeg",
+    caption: "A Journey of Love",
   },
   {
-    src: "/src/assets/Photos/2.jpeg",
-    caption: "The Proposal",
+    src: "/Photos/2.jpeg",
+    caption: "Cherished Moments",
   },
   {
-    src: "/src/assets/Photos/3.jpeg",
-    caption: "Engagement Day",
+    src: "/Photos/3.jpeg",
+    caption: "Love in Every Frame",
   },
   {
-    src: "/src/assets/Photos/4.jpeg",
-    caption: "Pre-Wedding Shoot",
+    src: "/Photos/4.jpeg",
+    caption: "Building Memories Together",
   },
   {
-    src: "/src/assets/Photos/5.jpeg",
+    src: "/Photos/5.jpeg",
     caption: "Together Forever",
   },
 ];
