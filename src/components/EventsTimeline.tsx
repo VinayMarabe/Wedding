@@ -18,6 +18,14 @@ const events = [
     venue: "Valasang Wada, Solapur",
     description: "The auspicious moment when Pooja & Shubham begin their new journey together.",
   },
+  {
+    icon: Sparkles,
+    title: "Reception",
+    date: "28th February 2026",
+    time: "7:00 PM onwards",
+    venue: "Manoprabha Lawns, Kaveri Nagar, Mandoli Road, Belgaum",
+    description: "An evening of joy and celebration with family and friends.",
+  },
 ];
 
 const EventsTimeline = () => {
