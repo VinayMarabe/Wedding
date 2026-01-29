@@ -19,10 +19,10 @@ const Footer = () => {
           </div>
 
           <h3 className="font-display text-2xl md:text-3xl text-cream mb-2">
-            Shubham & Pooja
+            Pooja & Shubham
           </h3>
           <p className="font-body text-lg text-gold italic mb-6">
-            #ShubhamWedsPooja
+            #PoojaWedsShubham
           </p>
 
           <p className="font-body text-cream/70 mb-4">

@@ -21,20 +21,22 @@ const CoupleSection = () => {
         </motion.div>
 
         <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Groom */}
+
+
+        {/* Bride */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex-1 text-center lg:text-right"
+            className="flex-1 text-center lg:text-left"
           >
             <h3 className="font-display text-2xl md:text-3xl text-primary mb-2">
-              Shubham Saboji
+              Pooja Marabe
             </h3>
-            <p className="font-body text-gold text-lg italic mb-4">The Groom</p>
-            <p className="font-body text-muted-foreground leading-relaxed max-w-sm mx-auto lg:ml-auto lg:mr-0">
-              Son of Mr. & Mrs. Saboji. A kind-hearted and ambitious individual, ready to begin a new journey with his soulmate.
+            <p className="font-body text-gold text-lg italic mb-4">The Bride</p>
+            <p className="font-body text-muted-foreground leading-relaxed max-w-sm mx-auto lg:mr-auto lg:ml-0">
+              Daughter of Mr. & Mrs. Marabe. A graceful and creative soul, bringing joy and warmth to everyone around her.
             </p>
           </motion.div>
 
@@ -58,23 +60,24 @@ const CoupleSection = () => {
               />
             </div>
           </motion.div>
-
-          {/* Bride */}
+          
+          {/* Groom */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex-1 text-center lg:text-left"
+            className="flex-1 text-center lg:text-right"
           >
             <h3 className="font-display text-2xl md:text-3xl text-primary mb-2">
-              Pooja Marabe
+              Shubham Saboji
             </h3>
-            <p className="font-body text-gold text-lg italic mb-4">The Bride</p>
-            <p className="font-body text-muted-foreground leading-relaxed max-w-sm mx-auto lg:mr-auto lg:ml-0">
-              Daughter of Mr. & Mrs. Marabe. A graceful and creative soul, bringing joy and warmth to everyone around her.
+            <p className="font-body text-gold text-lg italic mb-4">The Groom</p>
+            <p className="font-body text-muted-foreground leading-relaxed max-w-sm mx-auto lg:ml-auto lg:mr-0">
+              Son of Mr. & Mrs. Saboji. A kind-hearted and ambitious individual, ready to begin a new journey with his soulmate.
             </p>
           </motion.div>
+          
         </div>
       </div>
     </section>

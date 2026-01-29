@@ -45,7 +45,7 @@ const HeroSection = () => {
           className="mb-6"
         >
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-cream tracking-wide text-shadow">
-            Shubham
+            Pooja
           </h1>
           <div className="flex items-center justify-center gap-4 my-4">
             <span className="h-px w-12 bg-gold" />
@@ -53,7 +53,7 @@ const HeroSection = () => {
             <span className="h-px w-12 bg-gold" />
           </div>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-cream tracking-wide text-shadow">
-            Pooja
+            Shubham
           </h1>
         </motion.div>
 
