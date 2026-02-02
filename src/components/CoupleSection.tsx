@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import coupleIllustration from "@/assets/NewCouple.png";
+import coupleIllustration from "@/assets/newBW.jpeg";
 
 const CoupleSection = () => {
   return (
@@ -48,14 +48,14 @@ const CoupleSection = () => {
             viewport={{ once: true }}
             className="relative shrink-0"
           >
-            <div className="relative w-72 md:w-96 h-[420px] md:h-[520px] flex items-center justify-center">
+            <div className="relative w-full max-w-[340px] md:max-w-[400px] aspect-[3/4] flex items-center justify-center mx-auto">
               {/* Decorative frame */}
               <div className="absolute -inset-4 border-2 border-gold/40 rounded-3xl pointer-events-none" />
               <div className="absolute -inset-8 border border-gold/20 rounded-3xl pointer-events-none" />
               <img
                 src={coupleIllustration}
                 alt="Couple Illustration"
-                className="absolute inset-0 w-full h-full object-cover object-center rounded-3xl z-10 animate-float shadow-lg"
+                className="relative w-full h-full object-cover object-center rounded-3xl z-10 animate-float shadow-lg"
                 style={{ boxSizing: 'border-box' }}
               />
             </div>

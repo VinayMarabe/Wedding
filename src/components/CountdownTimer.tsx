@@ -44,7 +44,7 @@ const CountdownTimer = () => {
   ];
 
   return (
-    <div className="flex justify-center gap-4 md:gap-8 flex-wrap">
+    <div className="flex justify-center gap-2 md:gap-6 flex-wrap">
       {timeUnits.map((unit, index) => (
         <motion.div
           key={unit.label}
@@ -54,12 +54,12 @@ const CountdownTimer = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center"
         >
-          <div className="w-20 h-20 md:w-24 md:h-24 rounded-lg bg-primary flex items-center justify-center gold-border">
-            <span className="font-display text-3xl md:text-4xl text-cream">
+          <div className="w-14 h-14 md:w-20 md:h-20 rounded-lg bg-primary flex items-center justify-center gold-border">
+            <span className="font-display text-xl md:text-3xl text-cream">
               {String(unit.value).padStart(2, "0")}
             </span>
           </div>
-          <span className="font-body text-sm md:text-base text-muted-foreground mt-2 tracking-wide">
+          <span className="font-body text-xs md:text-sm text-muted-foreground mt-1 tracking-wide">
             {unit.label}
           </span>
         </motion.div>

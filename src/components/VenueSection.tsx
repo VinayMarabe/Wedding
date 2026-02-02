@@ -34,35 +34,32 @@ const VenueSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-10 text-center"
         >
-          <h3 className="font-display text-2xl md:text-3xl text-gold mb-8">
+          <h3 className="font-display text-2xl md:text-3xl text-gold mb-6">
             Venue Details
           </h3>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full border-2 border-gold flex items-center justify-center mb-4">
-                <Calendar className="w-7 h-7 text-gold" />
+          <div className="flex flex-row justify-center items-start gap-4 flex-wrap md:grid md:grid-cols-3 md:gap-8 md:px-8">
+            <div className="flex flex-col items-center min-w-[90px]">
+              <div className="w-10 h-10 md:w-16 md:h-16 rounded-full border-2 border-gold flex items-center justify-center mb-2 md:mb-4">
+                <Calendar className="w-5 h-5 md:w-7 md:h-7 text-gold" />
               </div>
-              <p className="font-display text-xl text-cream">22nd February 2026</p>
-              <p className="font-body text-cream/70">Sunday</p>
+              <p className="font-display text-xs md:text-xl text-cream">22nd February 2026</p>
+              <p className="font-body text-[10px] md:text-base text-cream/70">Sunday</p>
             </div>
-
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full border-2 border-gold flex items-center justify-center mb-4">
-                <Clock className="w-7 h-7 text-gold" />
+            <div className="flex flex-col items-center min-w-[90px]">
+              <div className="w-10 h-10 md:w-16 md:h-16 rounded-full border-2 border-gold flex items-center justify-center mb-2 md:mb-4">
+                <Clock className="w-5 h-5 md:w-7 md:h-7 text-gold" />
               </div>
-              <p className="font-display text-xl text-cream">12:12 PM</p>
-              <p className="font-body text-cream/70">Wedding Muhurat</p>
+              <p className="font-display text-xs md:text-xl text-cream">12:12 PM</p>
+              <p className="font-body text-[10px] md:text-base text-cream/70">Wedding Muhurat</p>
             </div>
-
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full border-2 border-gold flex items-center justify-center mb-4">
-                <MapPin className="w-7 h-7 text-gold" />
+            <div className="flex flex-col items-center min-w-[90px]">
+              <div className="w-10 h-10 md:w-16 md:h-16 rounded-full border-2 border-gold flex items-center justify-center mb-2 md:mb-4">
+                <MapPin className="w-5 h-5 md:w-7 md:h-7 text-gold" />
               </div>
-              <p className="font-display text-xl text-cream">Valasang Wada</p>
-              <p className="font-body text-cream/70">Solapur</p>
+              <p className="font-display text-xs md:text-xl text-cream">Valasang Wada</p>
+              <p className="font-body text-[10px] md:text-base text-cream/70">Solapur</p>
             </div>
           </div>
 
