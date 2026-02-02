@@ -13,7 +13,7 @@ const galleryImages = [
     caption: "Cherished Moments",
   },
   {
-    src: "/Photos/3.jpeg",
+    src: "/Photos/new.jpeg",
     caption: "Love in Every Frame",
   },
   {
@@ -21,7 +21,7 @@ const galleryImages = [
     caption: "Building Memories Together",
   },
   {
-    src: "/Photos/7.jpeg",
+    src: "/Photos/new2.jpeg",
     caption: "Together Forever",
   },
 ];
