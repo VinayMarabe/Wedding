@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import coupleIllustration from "@/assets/newBW.jpeg";
+import coupleIllustration from "@/assets/NewCouple.png";
 
 const CoupleSection = () => {
   return (
@@ -36,7 +36,7 @@ const CoupleSection = () => {
             </h3>
             <p className="font-body text-gold text-lg italic mb-4">The Bride</p>
             <p className="font-body text-muted-foreground leading-relaxed max-w-sm mx-auto lg:mr-auto lg:ml-0">
-              Daughter of Mr. & Mrs. Marabe. A graceful and creative soul, bringing joy and warmth to everyone around her.
+              ​The daughter of Mr. & Mrs. Marabe, Pooja is a woman of innate grace and a vibrant creative spirit. Known for her ability to bring light and warmth into any room, she is the heart of her family and now, the beautiful soulmate to her groom.
             </p>
           </motion.div>
 
@@ -74,7 +74,7 @@ const CoupleSection = () => {
             </h3>
             <p className="font-body text-gold text-lg italic mb-4">The Groom</p>
             <p className="font-body text-muted-foreground leading-relaxed max-w-sm mx-auto lg:ml-auto lg:mr-0">
-              Son of Mr. & Mrs. Saboji. A kind-hearted and ambitious individual, ready to begin a new journey with his soulmate.
+              The son of Mr. & Mrs. Saboji, Shubham is an ambitious and kind-hearted man who leads with integrity. Driven by his goals but grounded by his heart, he stands ready to embark on life’s greatest adventure alongside his bride.
             </p>
           </motion.div>
           
