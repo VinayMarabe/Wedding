@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import coupleIllustration from "@/assets/Untitleddesign.png";
+import coupleIllustration from "@/assets/3.jpeg";
 
 const CoupleSection = () => {
   return (
