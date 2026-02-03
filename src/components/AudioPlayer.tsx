@@ -6,8 +6,7 @@ const clamp = (val: number, min: number, max: number) => Math.max(min, Math.min(
 
 const AudioPlayer = ({ volume = 0.6 }: { volume?: number }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [isUserInteracted, setIsUserInteracted] = useState(false);
-  const [shouldPlay, setShouldPlay] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -15,40 +14,38 @@ const AudioPlayer = ({ volume = 0.6 }: { volume?: number }) => {
     }
   }, [volume]);
 
-  // Autoplay after first user interaction
+  // Start audio on first user interaction (works on mobile)
   useEffect(() => {
-    const handleUserInteraction = () => {
-      setIsUserInteracted(true);
-      setShouldPlay(true);
-      window.removeEventListener("pointerdown", handleUserInteraction);
+    const startAudio = () => {
+      if (audioRef.current && !isPlaying) {
+        audioRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch(() => {});
+      }
     };
-    window.addEventListener("pointerdown", handleUserInteraction);
-    return () => window.removeEventListener("pointerdown", handleUserInteraction);
-  }, []);
 
-  // Pause when tab is hidden, play when visible
+    // Multiple event types for better mobile support
+    const events = ["click", "touchstart", "touchend", "scroll"];
+    events.forEach(event => window.addEventListener(event, startAudio, { once: true, passive: true }));
+
+    return () => {
+      events.forEach(event => window.removeEventListener(event, startAudio));
+    };
+  }, [isPlaying]);
+
+  // Pause when tab is hidden, resume when visible
   useEffect(() => {
     const handleVisibility = () => {
       if (!audioRef.current) return;
       if (document.hidden) {
         audioRef.current.pause();
-      } else if (isUserInteracted && shouldPlay) {
+      } else if (isPlaying) {
         audioRef.current.play().catch(() => {});
       }
     };
     document.addEventListener("visibilitychange", handleVisibility);
     return () => document.removeEventListener("visibilitychange", handleVisibility);
-  }, [isUserInteracted, shouldPlay]);
-
-  // Play/pause based on shouldPlay
-  useEffect(() => {
-    if (!audioRef.current) return;
-    if (isUserInteracted && shouldPlay && !document.hidden) {
-      audioRef.current.play().catch(() => {});
-    } else {
-      audioRef.current.pause();
-    }
-  }, [isUserInteracted, shouldPlay]);
+  }, [isPlaying]);
 
   return (
     <audio
@@ -56,7 +53,6 @@ const AudioPlayer = ({ volume = 0.6 }: { volume?: number }) => {
       src={apnaBanaLe}
       loop
       preload="auto"
-      // autoPlay is omitted due to browser restrictions
       style={{ display: "none" }}
     />
   );
