@@ -1,0 +1,20 @@
+[build]
+  functions = "netlify/functions"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[functions]
+  directory = "netlify/functions/"
+
+[dev]
+  command = "npm run dev"
+  targetPort = 8080
+  port = 8888
+  functions = "netlify/functions"

@@ -21,7 +21,7 @@ const galleryImages = [
     caption: "Building Memories Together",
   },
   {
-    src: "/Photos/new2.jpeg",
+    src: "/Photos/new4.jpeg",
     caption: "Together Forever",
   },
 ];
