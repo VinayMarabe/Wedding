@@ -3,7 +3,9 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
+  # Omit documentation files from secrets scanning (they contain example/placeholder values)
+  SECRETS_SCAN_OMIT_PATHS = "DEPLOYMENT_CHECKLIST.md,GUEST_MESSAGES_README.md"
 
 [[redirects]]
   from = "/api/*"
