@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import coupleVideo from "@/assets/Video_Animation.mp4";
+import coupleVideo from "@/assets/video.mp4";
 
 const HeroSection = () => {
   return (
