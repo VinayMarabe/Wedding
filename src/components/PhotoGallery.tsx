@@ -29,6 +29,13 @@ const galleryImages = [
 const PhotoGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Preload all images on mount for smoother transitions
+  useEffect(() => {
+    galleryImages.forEach((image) => {
+      const img = new Image();
+      img.src = image.src;
+    });
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
@@ -54,9 +61,9 @@ const PhotoGallery = () => {
     <section className="wedding-section bg-card">
       <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
@@ -72,24 +79,24 @@ const PhotoGallery = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
           className="relative"
         >
           {/* Main Image Container */}
           <div className="relative overflow-hidden rounded-lg gold-border aspect-[4/3] bg-muted">
-            <AnimatePresence mode="wait">
+            <AnimatePresence initial={false}>
               <motion.img
                 key={currentIndex}
                 src={galleryImages[currentIndex].src}
                 alt={galleryImages[currentIndex].caption}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.4 }}
-                className="w-full h-full object-cover"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="absolute inset-0 w-full h-full object-cover will-change-[opacity] transform-gpu"
               />
             </AnimatePresence>
 
@@ -97,9 +104,10 @@ const PhotoGallery = () => {
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
               <motion.p
                 key={`caption-${currentIndex}`}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="font-display text-xl text-cream text-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="font-display text-xl text-cream text-center will-change-[opacity] transform-gpu"
               >
                 {galleryImages[currentIndex].caption}
               </motion.p>
@@ -142,12 +150,10 @@ const PhotoGallery = () => {
           {/* Thumbnail Strip */}
           <div className="mt-8 flex gap-3 justify-center overflow-x-auto pb-2">
             {galleryImages.map((image, index) => (
-              <motion.button
+              <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden transition-all duration-300 ${
+                className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden transition-transform duration-200 ease-out hover:scale-105 active:scale-95 transform-gpu ${
                   index === currentIndex
                     ? "ring-2 ring-gold ring-offset-2 ring-offset-card"
                     : "opacity-60 hover:opacity-100"
@@ -157,8 +163,9 @@ const PhotoGallery = () => {
                   src={image.src}
                   alt={`Thumbnail ${index + 1}`}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
-              </motion.button>
+              </button>
             ))}
           </div>
         </motion.div>

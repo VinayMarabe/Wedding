@@ -30,8 +30,9 @@ const GuestMessages = () => {
         const data = await response.json();
         setMessages(data.messages || []);
       }
-    } catch (error) {
-      console.error('Error fetching messages:', error);
+      // Silently fail for non-ok responses (e.g., database not configured in dev)
+    } catch {
+      // Silently fail - backend may not be available in development
     }
   };
 
@@ -97,9 +98,9 @@ const GuestMessages = () => {
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
@@ -118,15 +119,15 @@ const GuestMessages = () => {
 
         {/* Message Bubbles Display */}
         <div className="relative h-32 mb-8 flex items-center justify-center">
-          <AnimatePresence mode="wait">
+          <AnimatePresence initial={false}>
             {currentMessage && (
               <motion.div
                 key={currentMessage.id}
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.8, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="max-w-md"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute max-w-md"
               >
                 <Card className="bg-white/80 backdrop-blur-sm border-rose-200 shadow-lg">
                   <CardContent className="p-4">

@@ -164,17 +164,22 @@
     background-size: 100px 100px;
   }
 
-  /* Animation utilities */
+  /* Animation utilities - GPU accelerated */
   .animate-float {
     animation: float 6s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .animate-shimmer {
     animation: shimmer 3s ease-in-out infinite;
+    will-change: opacity;
   }
 
   .animate-pulse-slow {
     animation: pulse-slow 4s ease-in-out infinite;
+    will-change: opacity, transform;
+    transform: translateZ(0);
   }
 
   @keyframes float {

@@ -10,7 +10,8 @@ const HeroSection = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover will-change-transform"
       >
         <source src={coupleVideo} type="video/mp4" />
       </video>
@@ -30,9 +31,9 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4">
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
           className="font-body text-lg md:text-xl text-gold-light tracking-widest mb-4"
         >
           WEDDING INVITATION
@@ -58,18 +59,18 @@ const HeroSection = () => {
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
           className="font-body text-xl md:text-2xl text-cream/90 italic mb-8"
         >
           Request the pleasure of your company
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
           className="flex flex-col items-center gap-2"
         >
           <p className="font-display text-2xl md:text-3xl text-gold tracking-wider">

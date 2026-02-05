@@ -6,9 +6,9 @@ const CoupleSection = () => {
     <section className="wedding-section bg-background overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
@@ -25,9 +25,9 @@ const CoupleSection = () => {
 
         {/* Bride */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="flex-1 text-center lg:text-left"
           >
@@ -42,9 +42,9 @@ const CoupleSection = () => {
 
           {/* Illustration */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="relative shrink-0"
           >
@@ -55,7 +55,8 @@ const CoupleSection = () => {
               <img
                 src={coupleIllustration}
                 alt="Couple Illustration"
-                className="relative w-full h-full object-cover object-center rounded-3xl z-10 animate-float shadow-lg"
+                className="relative w-full h-full object-cover object-center rounded-3xl z-10 shadow-lg"
+                loading="lazy"
                 style={{ boxSizing: 'border-box' }}
               />
             </div>
@@ -63,9 +64,9 @@ const CoupleSection = () => {
           
           {/* Groom */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="flex-1 text-center lg:text-right"
           >

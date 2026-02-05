@@ -44,9 +44,9 @@ const SlideshowSection = () => {
     <section className="wedding-section bg-card">
       <div className="max-w-2xl mx-auto flex flex-col items-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
           <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
@@ -67,11 +67,11 @@ const SlideshowSection = () => {
                 key={index}
                 src={photos[index]}
                 alt="Couple Slideshow"
-                className="object-cover w-full h-full"
+                className="absolute object-cover w-full h-full will-change-[opacity] transform-gpu"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 0.3 }}
               />
             </AnimatePresence>
           </div>
