@@ -31,10 +31,10 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4">
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="font-body text-lg md:text-xl text-gold-light tracking-widest mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="font-body text-lg md:text-xl text-gold-light tracking-widest mb-4 transform-gpu"
         >
           WEDDING INVITATION
         </motion.p>
@@ -59,19 +59,19 @@ const HeroSection = () => {
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="font-body text-xl md:text-2xl text-cream/90 italic mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+          className="font-body text-xl md:text-2xl text-cream/90 italic mb-8 transform-gpu"
         >
           Request the pleasure of your company
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="flex flex-col items-center gap-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
+          className="flex flex-col items-center gap-2 transform-gpu"
         >
           <p className="font-display text-2xl md:text-3xl text-gold tracking-wider">
             22nd February 2026

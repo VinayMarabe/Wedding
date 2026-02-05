@@ -6,11 +6,11 @@ const CoupleSection = () => {
     <section className="wedding-section bg-background overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 transform-gpu"
         >
           <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
             The Happy Couple
@@ -25,11 +25,11 @@ const CoupleSection = () => {
 
         {/* Bride */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex-1 text-center lg:text-left"
+            className="flex-1 text-center lg:text-left transform-gpu"
           >
             <h3 className="font-display text-2xl md:text-3xl text-primary mb-2">
               Pooja Marabe
@@ -42,11 +42,11 @@ const CoupleSection = () => {
 
           {/* Illustration */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative shrink-0"
+            className="relative shrink-0 transform-gpu"
           >
             <div className="relative w-full max-w-[340px] md:max-w-[400px] aspect-[3/4] flex items-center justify-center mx-auto">
               {/* Decorative frame */}
@@ -55,7 +55,7 @@ const CoupleSection = () => {
               <img
                 src={coupleIllustration}
                 alt="Couple Illustration"
-                className="relative w-full h-full object-cover object-center rounded-3xl z-10 shadow-lg"
+                className="relative w-full h-full object-cover object-center rounded-3xl z-10 animate-float shadow-lg"
                 loading="lazy"
                 style={{ boxSizing: 'border-box' }}
               />
@@ -64,11 +64,11 @@ const CoupleSection = () => {
           
           {/* Groom */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex-1 text-center lg:text-right"
+            className="flex-1 text-center lg:text-right transform-gpu"
           >
             <h3 className="font-display text-2xl md:text-3xl text-primary mb-2">
               Shubham Saboji

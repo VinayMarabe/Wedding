@@ -33,11 +33,11 @@ const EventsTimeline = () => {
     <section className="wedding-section bg-card pattern-mandala">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 transform-gpu"
         >
           <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
             Wedding Events
@@ -57,11 +57,11 @@ const EventsTimeline = () => {
           {events.map((event, index) => (
             <motion.div
               key={event.title}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
               viewport={{ once: true }}
-              className={`flex flex-col md:flex-row items-center gap-6 mb-12 ${
+              className={`flex flex-col md:flex-row items-center gap-6 mb-12 transform-gpu ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >

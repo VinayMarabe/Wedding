@@ -44,10 +44,10 @@ const SlideshowSection = () => {
     <section className="wedding-section bg-card">
       <div className="max-w-2xl mx-auto flex flex-col items-center">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-8 transform-gpu"
         >
           <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
             Pooja & Shubham
@@ -61,17 +61,17 @@ const SlideshowSection = () => {
         </motion.div>
 
         <div className="relative w-full flex justify-center items-center mb-8">
-          <div className="w-[320px] h-[400px] md:w-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-lg bg-background flex items-center justify-center">
+          <div className="w-[320px] h-[400px] md:w-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-lg bg-background flex items-center justify-center relative">
             <AnimatePresence initial={false}>
               <motion.img
                 key={index}
                 src={photos[index]}
                 alt="Couple Slideshow"
-                className="absolute object-cover w-full h-full will-change-[opacity] transform-gpu"
+                className="absolute inset-0 object-cover w-full h-full will-change-[opacity] transform-gpu"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               />
             </AnimatePresence>
           </div>

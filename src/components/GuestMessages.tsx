@@ -98,11 +98,11 @@ const GuestMessages = () => {
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 transform-gpu"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="h-px w-12 bg-rose-300" />
@@ -123,11 +123,11 @@ const GuestMessages = () => {
             {currentMessage && (
               <motion.div
                 key={currentMessage.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="absolute max-w-md"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="absolute max-w-md transform-gpu"
               >
                 <Card className="bg-white/80 backdrop-blur-sm border-rose-200 shadow-lg">
                   <CardContent className="p-4">

@@ -61,11 +61,11 @@ const PhotoGallery = () => {
     <section className="wedding-section bg-card">
       <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 transform-gpu"
         >
           <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
             Our Journey Together
@@ -79,11 +79,11 @@ const PhotoGallery = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative"
+          className="relative transform-gpu"
         >
           {/* Main Image Container */}
           <div className="relative overflow-hidden rounded-lg gold-border aspect-[4/3] bg-muted">
@@ -95,7 +95,7 @@ const PhotoGallery = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 className="absolute inset-0 w-full h-full object-cover will-change-[opacity] transform-gpu"
               />
             </AnimatePresence>
@@ -104,9 +104,9 @@ const PhotoGallery = () => {
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
               <motion.p
                 key={`caption-${currentIndex}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
                 className="font-display text-xl text-cream text-center will-change-[opacity] transform-gpu"
               >
                 {galleryImages[currentIndex].caption}

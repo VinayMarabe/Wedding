@@ -13,11 +13,11 @@ const VenueSection = () => {
 
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 transform-gpu"
         >
           <h2 className="font-display text-3xl md:text-4xl text-cream mb-4">
             Save The Date
@@ -30,11 +30,11 @@ const VenueSection = () => {
         <CountdownTimer />
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="mt-10 text-center"
+          className="mt-10 text-center transform-gpu"
         >
           <h3 className="font-display text-2xl md:text-3xl text-gold mb-6">
             Venue Details
