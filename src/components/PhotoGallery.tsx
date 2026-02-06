@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
 // Add your couple photos here
 const galleryImages = [
   {
-    src: "/Photos/6.jpeg",
+    src: "/Photos/new11.jpeg",
     caption: "A Journey of Love",
   },
   {
