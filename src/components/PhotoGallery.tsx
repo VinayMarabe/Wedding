@@ -2,26 +2,29 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
 
+// Base URL for assets
+const baseUrl = import.meta.env.BASE_URL;
+
 // Add your couple photos here
 const galleryImages = [
   {
-    src: "/Photos/6.jpeg",
+    src: `${baseUrl}Photos/6.jpeg`,
     caption: "A Journey of Love",
   },
   {
-    src: "/Photos/2.jpeg",
+    src: `${baseUrl}Photos/2.jpeg`,
     caption: "Cherished Moments",
   },
   {
-    src: "/Photos/new.jpeg",
+    src: `${baseUrl}Photos/new.jpeg`,
     caption: "Love in Every Frame",
   },
   {
-    src: "/Photos/4.jpeg",
+    src: `${baseUrl}Photos/4.jpeg`,
     caption: "Building Memories Together",
   },
   {
-    src: "/Photos/new4.jpeg",
+    src: `${baseUrl}Photos/new4.jpeg`,
     caption: "Together Forever",
   },
 ];
